@@ -1,0 +1,34 @@
+/*==================  Stuck menu  ======================*/
+@stuck-bg: @navbar-default-bg;
+@stuck-bc: #555;
+
+.stuck_container {
+	background: @stuck-bg;
+}
+
+.isStuck {
+  z-index: 9999;
+  box-shadow: 0 ((2/@base-text-size)*1rem) 0px #eee;
+  .background (@stuck-bg, 1);
+  padding: (15/@base-text-size)*1rem 0 (15/@base-text-size)*1rem;
+  .navbar-nav{
+    margin-top: (16/@base-text-size)*1rem;
+  }
+  .navbar-brand{
+    //padding-top: (2/@base-text-size)*1rem
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .isStuck {
+    display: none !important;
+  }
+}
+
+.isStuck .sf-menu > ul{
+	top: (70/@base-text-size)*1rem;
+}
+
+// .isStuck .sf-menu ul ul{
+// 	top: 0;
+// }

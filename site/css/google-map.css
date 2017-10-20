@@ -1,0 +1,49 @@
+@import url(../css/font-awesome.css);
+@import url(../css/fl-justicons.css);
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Lato);
+/*==================  GOOGLE MAP  ======================*/
+.map {
+  position: relative;
+  padding-bottom: 98.385%;
+}
+@media (max-width: 2047px) {
+  .map {
+    padding-bottom: 407px;
+  }
+}
+@media (max-width: 991px) {
+  .map {
+    padding-bottom: 400px;
+  }
+}
+@media (max-width: 767px) {
+  .map {
+    padding-bottom: 202px;
+  }
+}
+.map .gm-style .gm-style-iw {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.map_model {
+  height: 392px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.map_model img {
+  max-width: none !important;
+}
+@media (max-width: 767px) {
+  .map_model {
+    height: 300px;
+  }
+}
+@media (max-width: 479px) {
+  .map_model {
+    height: 200px;
+  }
+}
+.map_locations {
+  display: none;
+}

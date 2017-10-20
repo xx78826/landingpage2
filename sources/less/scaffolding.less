@@ -1,0 +1,425 @@
+//
+// Scaffolding
+// --------------------------------------------------
+//==================    Imports    ======================
+@import "_stuck-menu.less";
+@import "_to-top.less";
+@import "_thumb.less";
+@import "touch-touch.less";
+@import "_tabs.less";
+@import "_accordion.less";
+@import "_parallax.less";
+@import "_navbar.less";
+@import "owl-carousel.less";
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+  .box-sizing(border-box);
+}
+
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+div.container {
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+//-------------------------
+@media (max-width: 500px) {
+  .row .col-xs-6 {
+    clear: both;
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .row .col-xs-4 {
+    clear: both;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .row .col-xs-12 + * {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .row .col-sm-12 + * {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .row .col-sm-6.col-6-sm-offset {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+.col-6_mod {
+  div:nth-child(n+3) {
+    margin-top: (50/@base-text-size)*1rem;
+  }
+  @media (min-width: 768px){
+    div:nth-child(2n+3) {
+      clear: left;
+    }
+  }
+  @media (max-width: 767px) {
+    div:nth-child(n+2) {
+      margin-top: 50px;
+    }
+  }
+}
+
+.col-4_mod {
+  div:nth-child(n+4) {
+    margin-top: (50/@base-text-size)*1rem;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    div:nth-child(3n+4) {
+      clear: both;
+    }
+  }
+  @media (max-width: 991px) {
+    div:nth-child(n+3) {
+      margin-top: 50px;
+    }
+
+    div:nth-child(2n+3) {
+      clear: both;
+    }
+  }
+  @media (max-width: 767px) {
+    div:nth-child(n+2) {
+      margin-top: 50px;
+    }
+
+    div:nth-child(n+1) {
+      float: none;
+      text-align: center;
+      max-width: 370px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.col-3_mod {
+  div:nth-child(n+5) {
+    margin-top: (50/@base-text-size)*1rem;
+  }
+  div:nth-child(4n+5) {
+    clear: both;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    div:nth-child(2n+3) {
+      clear: both;
+    }
+  }
+  @media (max-width: 991px) {
+    div:nth-child(n+3) {
+      margin-top: 50px;
+    }
+
+    div:nth-child(2n+3) {
+      clear: both;
+    }
+  }
+  @media (max-width: 767px) {
+    div:nth-child(n+2) {
+      margin-top: 50px;
+    }
+
+    div:nth-child(n+1) {
+      float: none;
+      text-align: center;
+      max-width: 370px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// Body reset
+
+html {
+  font-size: @base-vm-size;
+  //line-height: @base-vm-lh;
+
+  //font-size: @font-size-base ;
+  line-height: @line-height-base;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @media (max-width: 1979px) {
+    font-size: @font-size-base;
+    line-height: 1.4;
+  }
+}
+
+body {
+  font-family: @font-family-base;
+  //font-size: @font-size-base;
+  font-weight: @font-weight-base;
+  //line-height: @line-height-base;
+  // letter-spacing: 1.4px;
+  color: @text-color;
+  background-color: @footer-bg;
+  -webkit-text-size-adjust: none;
+  //@media (max-width: 1400px) {
+  //  font-size: 15px;
+  //  line-height: 1.4;
+  //}
+}
+
+.page {
+  overflow: hidden;
+  min-height: 500px;
+
+  .lt-ie9 & {
+    min-width: 1200px;
+  }
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Links
+
+a {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  .transition(.2s);
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active {
+    background: transparent;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: @link-hover-decoration;
+    color: @link-hover-color;
+  }
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+  text-decoration: none;
+}
+
+// EM normalize
+//
+
+em {
+  font-style: normal;
+}
+
+// Images
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  .img-responsive();
+}
+// Background Image
+//.bg-image{
+//  background-size:cover;
+//  background-attachment: fixed;
+//  background-position: right bottom;
+//}
+
+
+// B
+// Rounded corners
+.img-rounded {
+  .border-radius(@border-radius-large);
+}
+
+// Image thumbnails
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  display:inline-block;
+  overflow: hidden;
+  .transition(all .2s ease-in-out);
+  border:(10/@base-text-size)*1rem solid transparent;
+  // Keep them at most 100% wide
+  .img-responsive(inline-block);
+  position: relative;
+  z-index: 1;
+  &:hover{
+    .transform(scale(1.05));
+    border-color: @brand-primary;
+    z-index: 30;
+  }
+  @media (min-width: 2051px) {
+    width: 100%;
+  }
+}
+// Perfect circle
+.img-circle {
+  .border-radius(50%); // set radius in percents
+  * {
+    .border-radius(50%);
+  }
+}
+
+// Horizontal rules
+
+hr {
+  margin-top: (15/@base-text-size)*1rem;
+  margin-bottom: (15/@base-text-size)*1rem;
+  border: 0;
+  border-top: ((1.2/@base-text-size)*1rem) solid @hr-border;
+}
+
+em {
+  font-style: normal;
+}
+
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+// Upstream patch for normalize.css submitted: https://github.com/necolas/normalize.css/pull/379 - remove this fix once that is merged
+
+[role="button"] {
+  cursor: pointer;
+}
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+
+header {
+  background: @header-bg;
+  padding-top: (29/@base-text-size)*1em;
+  //padding-bottom: (37/@base-text-size)*1em;
+}
+.header-1{
+  border-bottom: 1px solid;
+  padding-bottom: (25/@base-text-size)*1rem;
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+main {
+  background: @content-bg;
+  .well-404{
+    .icon-lg{
+      font-size: (250/@base-text-size)*1rem;
+      line-height: 1;
+      @media (min-width:480px) {
+      font-size: (300/@base-text-size)*1rem;
+      }
+
+    }
+    p.big{
+      color:@brand-primary;
+      font-size: (150/@base-text-size)*1rem;
+      font-family: @font-family-sec;
+      line-height: 1;
+      @media (min-width:480px) {
+      font-size: (200/@base-text-size)*1rem;
+      }
+    }
+     h2+.icon{
+       margin-top: (10/@base-text-size)*1rem;
+     }
+    .icon+p.big{
+      margin-top: (9/@base-text-size)*1rem;
+    }
+    p.big + p{
+      margin-top: (44/@base-text-size)*1rem;
+    }
+  }
+  
+}
+
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer {
+  padding-top: (9/@base-text-size)*1rem;
+  padding-bottom: (20/@base-text-size)*1rem;
+  font-family: @font-family-sec-1;
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: @font-family-sec-1;
+  }
+  .rights{
+    margin-top: (34/@base-text-size)*1rem;
+    vertical-align: middle;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: (16/@base-text-size)*1rem;
+    a{
+      color:@white-clr ;
+      &:hover{
+        color: @brand-primary;
+      }
+    }
+  }
+}

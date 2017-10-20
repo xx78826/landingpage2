@@ -1,0 +1,36 @@
+//
+// Jumbotron
+// --------------------------------------------------
+
+
+.jumbotron {
+
+  p{
+    color: @white-clr;
+    font-weight: 700;
+    font-size: (72/@base-text-size)*1rem;
+    line-height: 1.2;
+  }
+  @media (max-width: 1500px) {
+    text-align: center;
+    p{
+      font-size: 55px;
+    }
+  }
+  @media (max-width: 991px) {
+   p{
+     font-size: 50px;
+   }
+  }
+  @media (max-width: 650px) {
+    p{
+      font-size: 35px;
+    }
+  }
+}
+
+// .jumbotron1{
+//   @media (max-width: 1350px){
+//     padding: 0 @jumbotron-padding
+//   }
+// }

@@ -1,0 +1,88 @@
+.media {
+  // Proper spacing between instances of .media
+  // margin-top: 15px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.media,
+.media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+
+.media-body {
+  width: 10000px;
+}
+
+.media-object {
+  display: block;
+}
+
+.media-right,
+.media > .pull-right {
+  padding-left: 10px;
+  img{
+    max-width: none;
+  }
+}
+
+.media-left,
+.media > .pull-left {
+  padding-right: (31/@base-text-size)*1rem;
+  img{
+    max-width: none;
+  }
+}
+.inset-3 {
+  padding-right: (22/@base-text-size)*1rem;
+}
+.inset-4 {
+  padding-right: (39/@base-text-size)*1rem;
+}
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+  @media (max-width: 768px){
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.media-middle {
+  vertical-align: middle;
+}
+
+.media-bottom {
+  vertical-align: bottom;
+}
+
+// Reset margins on headings for tighter default spacing
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+// Media list variation
+//
+// Undo default ul/ol styles
+.media-list {
+  padding-left: 0;
+  list-style: none;
+}
+.media-left--mod-1,
+.media-right--mod-1,
+.media-body--mod-1 {
+  display: table-cell;
+  vertical-align: top;
+  @media (max-width: 991px){
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+}
